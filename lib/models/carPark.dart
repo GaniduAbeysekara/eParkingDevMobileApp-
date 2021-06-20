@@ -1,7 +1,15 @@
+import 'package:flutter/cupertino.dart';
+
 class CarPark {
   final String id;
   final String name;
   final int avaliableSlot;
+  // final String color;
 
-  CarPark({required this.id, required this.name, required this.avaliableSlot});
+  const CarPark({
+    required this.id,
+    required this.name,
+    required this.avaliableSlot,
+    // required this.color,
+  });
 }
