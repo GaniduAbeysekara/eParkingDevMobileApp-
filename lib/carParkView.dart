@@ -14,7 +14,15 @@ class CarParkView extends StatelessWidget {
                   height: 100,
                   width: 50,
                   color: Colors.lightGreen,
-                  child: Text(e.slotNumber),
+                  child: Text(
+                    e.slotNumber,
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                      fontSize: 15,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
                 ),
               )
               .toList(),
