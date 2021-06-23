@@ -1,4 +1,4 @@
-import 'package:eparking/models/dummy_car_slots.dart';
+import 'package:eparking/data/dummy_car_slots.dart';
 import 'package:flutter/material.dart';
 
 class CarParkView extends StatelessWidget {

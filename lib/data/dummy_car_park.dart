@@ -1,4 +1,4 @@
-import './models/carPark.dart';
+import '../models/carPark.dart';
 
 const DUMMY_CAR_PARKS = const [
   CarPark(id: "001asd", name: "Colombo city center", avaliableSlot: 18),

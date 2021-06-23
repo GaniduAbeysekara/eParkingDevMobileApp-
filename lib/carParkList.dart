@@ -1,4 +1,4 @@
-import 'package:eparking/dummy_car_park.dart';
+import 'package:eparking/data/dummy_car_park.dart';
 import 'package:eparking/singleCarPark.dart';
 import 'package:flutter/material.dart';
 
