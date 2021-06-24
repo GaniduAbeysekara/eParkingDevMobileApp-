@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 class SingleCarPark extends StatelessWidget {
   final String name;
   final int avaliabelSlot;
+  final color = const Color(0xffEBEBEB);
+  final textColor = const Color(0xff707070);
 
   SingleCarPark(this.name, this.avaliabelSlot);
 
@@ -11,7 +13,7 @@ class SingleCarPark extends StatelessWidget {
     Navigator.of(context).push(
       MaterialPageRoute(
         builder: (_) {
-          return CarParkView();
+          return CarParkView(name);
         },
       ),
     );
@@ -24,7 +26,10 @@ class SingleCarPark extends StatelessWidget {
       splashColor: Colors.red,
       borderRadius: BorderRadius.circular(15),
       child: Container(
-          decoration: BoxDecoration(color: Colors.greenAccent.shade100),
+          decoration: BoxDecoration(
+              color: avaliabelSlot == 0
+                  ? Colors.red.shade100
+                  : Colors.green.shade100),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
@@ -38,7 +43,7 @@ class SingleCarPark extends StatelessWidget {
                   this.name,
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    color: Colors.black87,
+                    color: textColor,
                     fontSize: 15,
                   ),
                 ),
@@ -53,7 +58,7 @@ class SingleCarPark extends StatelessWidget {
                   this.avaliabelSlot.toString(),
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    color: Colors.black87,
+                    color: textColor,
                     fontSize: 15,
                   ),
                 ),
