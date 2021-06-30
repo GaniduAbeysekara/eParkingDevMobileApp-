@@ -11,11 +11,14 @@ class CarParkView extends StatelessWidget {
   CarParkView(this.carParkName);
   String dropdownValue = 'One';
 
-  void selectCarPark(BuildContext context) {
+  void selectCarPark(BuildContext context, String number) {
     Navigator.of(context).push(
       MaterialPageRoute(
         builder: (_) {
-          return CarList();
+          return CarList(
+            carParkName: this.carParkName,
+            parkingSlotNumber: number,
+          );
         },
       ),
     );
@@ -40,7 +43,7 @@ class CarParkView extends StatelessWidget {
             child: GridView(
               children: DUMMY_CAR_SLOTS
                   .map((e) => InkWell(
-                        onTap: () => selectCarPark(context),
+                        onTap: () => selectCarPark(context, e.slotNumber),
                         splashColor: Colors.red,
                         borderRadius: BorderRadius.circular(15),
                         child: Container(
