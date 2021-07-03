@@ -1,4 +1,4 @@
-import 'package:eparking/carList.dart';
+import 'package:eparking/Screens/carList.dart';
 import 'package:eparking/data/dummy_car_slots.dart';
 import 'package:flutter/material.dart';
 
@@ -9,7 +9,6 @@ class CarParkView extends StatelessWidget {
   final String carParkName;
 
   CarParkView(this.carParkName);
-  String dropdownValue = 'One';
 
   void selectCarPark(BuildContext context, String number) {
     Navigator.of(context).push(
@@ -47,24 +46,32 @@ class CarParkView extends StatelessWidget {
                         splashColor: Colors.red,
                         borderRadius: BorderRadius.circular(15),
                         child: Container(
-                          padding: EdgeInsets.all(15),
-                          height: 100,
-                          width: 50,
-                          color: Colors.lightGreen,
-                          child: Text(
-                            e.slotNumber,
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black,
-                              fontSize: 15,
-                            ),
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
+                            padding: EdgeInsets.all(15),
+                            height: 100,
+                            width: 50,
+                            color: e.status == 0
+                                ? Colors.lightGreen
+                                : e.status == 1
+                                    ? Colors.red
+                                    : Colors.yellow,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  e.slotNumber,
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black,
+                                    fontSize: 18,
+                                  ),
+                                  textAlign: TextAlign.center,
+                                ),
+                              ],
+                            )),
                       ))
                   .toList(),
               gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-                maxCrossAxisExtent: 50,
+                maxCrossAxisExtent: 60,
                 childAspectRatio: 3 / 5,
                 crossAxisSpacing: 20,
                 mainAxisSpacing: 20,

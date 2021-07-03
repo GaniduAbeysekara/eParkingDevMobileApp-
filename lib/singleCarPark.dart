@@ -42,7 +42,7 @@ class SingleCarPark extends StatelessWidget {
                 child: Text(
                   this.name,
                   style: TextStyle(
-                    fontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.w400,
                     color: textColor,
                     fontSize: 15,
                   ),
@@ -57,7 +57,7 @@ class SingleCarPark extends StatelessWidget {
                 child: Text(
                   this.avaliabelSlot.toString(),
                   style: TextStyle(
-                    fontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.w500,
                     color: textColor,
                     fontSize: 15,
                   ),
